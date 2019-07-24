@@ -134,7 +134,18 @@ return false
 
 
          }else{
-             super.onBackPressed()
+             if (currentTag.equals("home")){
+                 super.onBackPressed()
+             }else{
+
+                 var newfrag=  supportFragmentManager.findFragmentByTag("home")
+                 supportFragmentManager.beginTransaction().hide(currentFragment!!).show(newfrag!!).commit()
+                 currentTag="home"
+                 currentFragment=newfrag
+
+                 bottomNavigation.selectedItemId=R.id.action_home
+             }
+
          }
 
      }
