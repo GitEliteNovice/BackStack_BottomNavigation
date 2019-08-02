@@ -16,6 +16,6 @@
     <color name="colorBlack">#000000</color>
     <color name="colorETHint">#8E8E8E</color>
     <color name="colorBTbg">#26000000</color>
-
+    <color name="orange">#FF4500</color>
 
 </resources>

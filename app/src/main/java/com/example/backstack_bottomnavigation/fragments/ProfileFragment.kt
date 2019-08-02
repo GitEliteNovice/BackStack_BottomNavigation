@@ -6,6 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.fragment.app.FragmentManager
+import com.example.backstack_bottomnavigation.MainActivity
 import com.example.backstack_bottomnavigation.R
 
 
@@ -20,13 +24,35 @@ private const val ARG_PARAM2 = "param2"
  */
 class ProfileFragment : Fragment() {
 
+    lateinit var more_about_me:TextView
+    lateinit var mrootView: View
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        mrootView= inflater.inflate(R.layout.fragment_profile, container, false)
+   init()
+    return mrootView
     }
 
+    private fun init() {
+
+        more_about_me=mrootView.findViewById(R.id.more_about_me)
+        more_about_me.setOnClickListener {
+            more_about_me()
+        }
+    }
+
+    fun more_about_me(){
+
+        childFragmentManager.beginTransaction().add(R.id.profile_conainer,MyInfoFragment()).addToBackStack(null).commit()
+
+    }
+
+    fun getchildFragmentManager(): FragmentManager {
+        return childFragmentManager
+
+    }
 
 }

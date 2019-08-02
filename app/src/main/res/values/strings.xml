@@ -2,12 +2,15 @@
     <string name="app_name">BackStack_BottomNavigation</string>
 
     <string name="home">Home</string>
-    <string name="middle">Mid</string>
+    <string name="list">List</string>
     <string name="profile">Profile</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home_fragment">Home fragment</string>
+    <string name="home_fragment">Welcome Home Friend</string>
+    <string name="info_fragment">My name is aryan</string>0
+    <string name="home_about_me">About me</string>
     <string name="mid_fragment">Mid fragment</string>
-    <string name="Profile_fragment">Profile fragment</string>
+    <string name="Profile_fragment">Its me Aryan</string>
+    <string name="my_profile">More about me</string>
 </resources>

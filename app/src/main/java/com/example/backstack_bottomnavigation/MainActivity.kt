@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.example.backstack_bottomnavigation.R
 import com.example.backstack_bottomnavigation.fragments.HomeFragment
 import com.example.backstack_bottomnavigation.fragments.MidFragment
@@ -116,37 +117,60 @@ return false
      }
 
      override fun onBackPressed() {
-     var toptag  =  FragmentStack.getInstance(3).pop(currentTag)
-         if (toptag!=null){
-             var topfrag=  supportFragmentManager.findFragmentByTag(toptag)
-             supportFragmentManager.beginTransaction().hide(currentFragment!!).show(topfrag!!).commit()
-         currentTag=toptag
-             currentFragment=topfrag
-             if (currentTag.equals("home")){
-                 bottomNavigation.selectedItemId=R.id.action_home
-             }else if (currentTag.equals("mid")){
 
-                 bottomNavigation.selectedItemId=R.id.action_mid
-             }else if (currentTag.equals("profile")){
+         var currentFrag=supportFragmentManager.findFragmentByTag(currentTag)
 
-                 bottomNavigation.selectedItemId=R.id.action_profile
-             }
+         var childfragmanager: FragmentManager?=null
+         if (currentFrag is ProfileFragment){
+             childfragmanager=currentFrag.getchildFragmentManager()
+         }else if (currentFrag is MidFragment){
+
+             childfragmanager=currentFrag.getchildFragmentManager()
+         }else if (currentFrag is HomeFragment){
+
+             childfragmanager=currentFrag.getchildFragmentManager()
+         }
+         if (childfragmanager?.backStackEntryCount!!>0){
+             childfragmanager.popBackStackImmediate()
+         }
+         else{
+
+             var toptag  =  FragmentStack.getInstance(3).pop(currentTag)
+             if (toptag!=null){
+                 var topfrag=  supportFragmentManager.findFragmentByTag(toptag)
+                 supportFragmentManager.beginTransaction().hide(currentFragment!!).show(topfrag!!).commit()
+                 currentTag=toptag
+                 currentFragment=topfrag
+                 if (currentTag.equals("home")){
+                     bottomNavigation.selectedItemId=R.id.action_home
+                 }else if (currentTag.equals("mid")){
+
+                     bottomNavigation.selectedItemId=R.id.action_mid
+                 }else if (currentTag.equals("profile")){
+
+                     bottomNavigation.selectedItemId=R.id.action_profile
+                 }
 
 
-         }else{
-             if (currentTag.equals("home")){
-                 super.onBackPressed()
              }else{
+                 if (currentTag.equals("home")){
+                     super.onBackPressed()
+                 }else{
 
-                 var newfrag=  supportFragmentManager.findFragmentByTag("home")
-                 supportFragmentManager.beginTransaction().hide(currentFragment!!).show(newfrag!!).commit()
-                 currentTag="home"
-                 currentFragment=newfrag
+                     var newfrag=  supportFragmentManager.findFragmentByTag("home")
+                     supportFragmentManager.beginTransaction().hide(currentFragment!!).show(newfrag!!).commit()
+                     currentTag="home"
+                     currentFragment=newfrag
 
-                 bottomNavigation.selectedItemId=R.id.action_home
+                     bottomNavigation.selectedItemId=R.id.action_home
+                 }
+
              }
 
          }
+
+
+
 
      }
 }
