@@ -6,9 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import app.com.getin.Callbacks.CallBack
 import com.example.backstack_bottomnavigation.R
+import com.example.backstack_bottomnavigation.adapters.Adapter
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,9 +25,16 @@ private const val ARG_PARAM2 = "param2"
  * A simple [Fragment] subclass.
  *
  */
-class MidFragment : Fragment() {
-lateinit var detail:TextView
+class MidFragment : Fragment(), CallBack {
+    override fun ItemClicked(pos: Int) {
+        childFragmentManager.beginTransaction().add(R.id.mid_container,DetailFragment()).addToBackStack(null).commit()
+    }
+
     lateinit var mrootview:View
+    lateinit var recyler_view:RecyclerView
+    lateinit var linearLayoutManager:LinearLayoutManager
+    lateinit var adapter:Adapter
+    lateinit var arrayList:ArrayList<String>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,15 +47,14 @@ lateinit var detail:TextView
     }
 
     private fun init() {
+        arrayList=ArrayList<String>()
+        arrayList.addAll(resources.getStringArray(R.array.hero_names))
+        recyler_view=mrootview.findViewById(R.id.recyler_view)
+        linearLayoutManager= LinearLayoutManager(this.activity, RecyclerView.VERTICAL,false)
+        recyler_view.layoutManager=linearLayoutManager
+        adapter= Adapter(activity!!,arrayList,this)
+        recyler_view.adapter=adapter
 
-       detail= mrootview.findViewById(R.id.detail)
-        detail.setOnClickListener {
-            detail()
-        }
-    }
-
-    fun detail(){
-        childFragmentManager.beginTransaction().add(R.id.mid_container,DetailFragment()).addToBackStack(null).commit()
     }
 
     fun getchildFragmentManager(): FragmentManager {

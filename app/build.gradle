@@ -34,6 +34,8 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    //recyler view
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
     //support design
     implementation 'com.google.android.material:material:1.0.0-rc01'
 

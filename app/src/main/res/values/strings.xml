@@ -13,4 +13,19 @@
     <string name="mid_fragment">Mid fragment</string>
     <string name="Profile_fragment">Its me Aryan</string>
     <string name="my_profile">More about me</string>
+    <string-array name="hero_names">
+        <item>Iron man</item>
+        <item>Thor</item>
+        <item>Caption America</item>
+        <item>Hulk</item>
+        <item>Deadpool</item>
+        <item>Black widow</item>
+        <item>Scarlett witch</item>
+        <item>Vision</item>
+        <item>Hawk eye</item>
+        <item>Star lord</item>
+        <item>Gamora</item>
+        <item>Rocket</item>
+        <item>Gamora</item>
+    </string-array>
 </resources>

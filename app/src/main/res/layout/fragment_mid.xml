@@ -9,16 +9,12 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_width="match_parent" android:layout_height="match_parent">
-    <TextView
-            android:id="@+id/detail"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:gravity="center"
-            android:background="@drawable/background_layout"
-            android:textColor="@color/orange"
-            android:textSize="20dp"
-            android:layout_height="wrap_content"
-            android:text="@string/my_profile"/>
+
+ <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/recyler_view"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
 </LinearLayout>
     <!-- TODO: Update blank fragment layout -->
     <FrameLayout
