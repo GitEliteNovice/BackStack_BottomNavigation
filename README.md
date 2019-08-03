@@ -1,3 +1,3 @@
 # BackStack_BottomNavigation
 
-![Screen1](https://user-images.githubusercontent.com/15318984/62406606-304fc200-b5cc-11e9-9ead-eb1b78050f4f.jpg)
+![Webp net-resizeimage](https://user-images.githubusercontent.com/15318984/62406641-b10ebe00-b5cc-11e9-9536-2b0a85034c98.png)
