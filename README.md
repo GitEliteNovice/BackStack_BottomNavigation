@@ -6,7 +6,7 @@
 If you want to switch between fragments with botttomnavigation view, without losing fragments state and along with if you want to maintain backstack of fragments.Then this example is for you.
 
 
-**Note:-This example is works same like Youtube app in terms of tab switching, maintaing fragment state and also managing backstack. 
+**Note:-This example is works same like YouTube app in terms of tab switching, maintaining fragment state and also managing backstack. 
 
 
 If you want to say thanks or want to share how much you like my efforts , then you can share it with me with [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/GitEliteNovice) 
