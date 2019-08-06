@@ -16,9 +16,12 @@ If you want to say thanks or want to share how much you like my efforts , then y
 
 
 
-## This example includes following things
-### 1. Stack
-### 2. BottomNavigationView
+### This example includes following things
+* Stack
+* BottomNavigationView
+* Array 
+* Fragments
+* Fragment manager
 
 Connect With Me
 -----------
