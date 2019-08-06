@@ -2,6 +2,10 @@
 
  [![API](https://img.shields.io/badge/API-15%2B-red.svg)](https://android-arsenal.com/api?level=15) [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40elite_novice)](https://twitter.com/elite_novice)
 
+## How this is helpful ?
+If you want to switch between fragments with botttomnavigation view, without losing fragments state and along with if you want to maintain backstack of fragments.Then this example is for you.
+*Note:-This example is works same like Youtube app in terms of tab switching, maintaing fragment state and also managing backstack. 
+
 
 If you want to say thanks or want to share how much you like my efforts , then you can share it with me with [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/GitEliteNovice) 
 
