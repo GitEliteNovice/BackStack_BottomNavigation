@@ -20,7 +20,6 @@ If you want to say thanks or want to share how much you like my efforts, then yo
 * Stack
 * BottomNavigationView
 * ArrayList 
-* Fragments
 * Fragment manager
 
 
