@@ -1,20 +1,15 @@
 package com.example.backstack_bottomnavigation
 
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.example.backstack_bottomnavigation.R
 import com.example.backstack_bottomnavigation.fragments.HomeFragment
 import com.example.backstack_bottomnavigation.fragments.MidFragment
 import com.example.backstack_bottomnavigation.fragments.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 import java.util.*
 
  class MainActivity : AppCompatActivity() {
@@ -28,7 +23,7 @@ import java.util.*
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 //doWork()
-         init()
+         init(savedInstanceState)
     }
 
 
@@ -56,12 +51,55 @@ import java.util.*
 
      }
 
-     private fun init() {
-         homeFragment= HomeFragment()
-         midFragment= MidFragment()
-         profileFragment= ProfileFragment()
+     private fun init(savedInstanceState: Bundle?) {
 
          bottomNavigation=findViewById(R.id.btm_nav)
+         if (savedInstanceState==null){
+             homeFragment= HomeFragment()
+             midFragment= MidFragment()
+             profileFragment= ProfileFragment()
+             updateFragment(homeFragment,"home")
+         }else{
+
+             currentTag=savedInstanceState.getString("currentTag")!!
+             currentFragment=supportFragmentManager.findFragmentByTag(currentTag)
+            if (supportFragmentManager.findFragmentByTag("home")==null){
+                homeFragment= HomeFragment()
+            }else{
+             homeFragment=supportFragmentManager.findFragmentByTag("home")!!
+            }
+             if (supportFragmentManager.findFragmentByTag("mid")==null){
+                 midFragment= MidFragment()
+             }else{
+                 midFragment=supportFragmentManager.findFragmentByTag("mid")!!
+             }
+             if (supportFragmentManager.findFragmentByTag("profile")==null){
+                 profileFragment= ProfileFragment()
+             }else{
+                 profileFragment=   supportFragmentManager.findFragmentByTag("profile")!!
+             }
+
+             when(currentTag){
+                 "home"->{
+                     updateFragment(homeFragment,"home")
+                     bottomNavigation.selectedItemId=R.id.action_home
+
+                 }
+                 "mid"->{
+                     updateFragment(midFragment,"mid")
+                     bottomNavigation.selectedItemId=R.id.action_mid
+
+                 }
+                 "profile"->{
+                     updateFragment(profileFragment,"profile")
+                     bottomNavigation.selectedItemId=R.id.action_profile
+
+                 }
+
+             }
+
+         }
+
          bottomNavigation.setOnNavigationItemSelectedListener(object :BottomNavigationView.OnNavigationItemSelectedListener{
              override fun onNavigationItemSelected(item: MenuItem): Boolean {
                  when(item.itemId){
@@ -87,7 +125,7 @@ return false
              }
 
          })
-         updateFragment(homeFragment,"home")
+
      }
 
      fun updateFragment(fragment:Fragment, tag:String){
@@ -172,5 +210,10 @@ return false
 
 
 
+     }
+
+     override fun onSaveInstanceState(outState: Bundle) {
+         outState.putString("currentTag",currentTag)
+         super.onSaveInstanceState(outState)
      }
 }
