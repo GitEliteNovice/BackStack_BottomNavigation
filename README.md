@@ -12,13 +12,6 @@ If you want to switch between fragments with botttomnavigation view, without los
 
 If you want to say thanks or want to share how much you like my efforts, then you can share it with me with [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/GitEliteNovice) 
 
- <p align="center">
-<br>
-<b>Android Example to keeps a history of previous tabs </b> 
-</p>
- <p align="center">
- Built with ❤︎ by <a href="https://medium.com/@EliteNovice">Aryan Dhankar</a>.  
- </p>
 
 
 ![Webp net-resizeimage](https://user-images.githubusercontent.com/15318984/62406658-e6b3a700-b5cc-11e9-9d5e-d1938099aa12.png) ![Webp net-resizeimage (1)](https://user-images.githubusercontent.com/15318984/62406685-224e7100-b5cd-11e9-80d9-0984a98b9455.png) ![Webp net-resizeimage (2)](https://user-images.githubusercontent.com/15318984/62406707-8d984300-b5cd-11e9-98d9-175e87ee3122.png)
@@ -30,6 +23,15 @@ If you want to say thanks or want to share how much you like my efforts, then yo
 * BottomNavigationView
 * ArrayList 
 * Fragment manager
+
+ <p align="center">
+<br>
+<b>Android Example to keeps a history of previous tabs </b> 
+</p>
+ <p align="center">
+ Built with ❤︎ by <a href="https://medium.com/@EliteNovice">Aryan Dhankar</a>.  
+ </p>
+
 
 
 Connect With Me
