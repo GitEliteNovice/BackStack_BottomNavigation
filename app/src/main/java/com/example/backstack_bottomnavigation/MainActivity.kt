@@ -60,7 +60,8 @@ import java.util.*
              profileFragment= ProfileFragment()
              updateFragment(homeFragment,"home")
          }else{
-
+             var stack=savedInstanceState.getStringArrayList("fragStack")
+             FragmentStack.getInstance(3).addAll(stack);
              currentTag=savedInstanceState.getString("currentTag")!!
              currentFragment=supportFragmentManager.findFragmentByTag(currentTag)
             if (supportFragmentManager.findFragmentByTag("home")==null){
@@ -214,6 +215,7 @@ return false
 
      override fun onSaveInstanceState(outState: Bundle) {
          outState.putString("currentTag",currentTag)
+         outState.putStringArrayList("fragStack",FragmentStack.getInstance(3).arrayList)
          super.onSaveInstanceState(outState)
      }
 }

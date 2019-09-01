@@ -17,7 +17,7 @@ class FragmentStack {
 
     companion object{
 
-    var stack_object:FragmentStack?=null
+  private  var stack_object:FragmentStack?=null
 
 
         fun getInstance(count :Int):FragmentStack{
@@ -27,6 +27,10 @@ class FragmentStack {
         return stack_object!!
         }
 
+    }
+
+    fun addAll(array: ArrayList<String> ?){
+        arrayList.addAll(array!!)
     }
 
     fun push(tag:String){
