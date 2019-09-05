@@ -3,7 +3,7 @@
  [![API](https://img.shields.io/badge/API-15%2B-red.svg)](https://android-arsenal.com/api?level=15) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-BottomNavigation-green.svg?style=flat )]( https://android-arsenal.com/details/1/7815 ) [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40elite_novice)](https://twitter.com/elite_novice) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
 
 ## How this is helpful ?
-This example demostrate how to keeps a history of previous tabs so that when the current tab's stack is exhausted the system back button will navigate to the previously selected tab.
+This example demonstrates  how to keeps a history of previous tabs so that when the current tab's stack is exhausted the system back button will navigate to the previously selected tab.
 If you want to switch between fragments with botttomnavigation view, without losing fragments state and along with if you want to maintain backstack of fragments.Then this example is for you.
 
 
