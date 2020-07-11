@@ -36,6 +36,7 @@ lateinit var about_me:TextView
     }
 
     private fun init() {
+
       var name = arguments?.getString("Name")?:let { "nothing" }
         Toast.makeText(context,name,Toast.LENGTH_LONG).show()
         about_me=mrootView.findViewById(R.id.about_me)
