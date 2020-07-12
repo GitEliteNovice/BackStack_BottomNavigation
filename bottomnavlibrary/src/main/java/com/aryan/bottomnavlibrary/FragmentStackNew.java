@@ -1,12 +1,10 @@
 package com.aryan.bottomnavlibrary;
 
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
